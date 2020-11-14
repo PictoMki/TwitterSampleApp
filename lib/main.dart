@@ -3,6 +3,7 @@ import 'package:sns_app/page/login_page.dart';
 import 'package:sns_app/page/profile_page.dart';
 import 'package:sns_app/page/profile_setting_page.dart';
 import 'package:sns_app/page/sign_up_page.dart';
+import 'package:sns_app/page/start_page.dart';
 import 'package:sns_app/page/tab_page_container.dart';
 import 'package:sns_app/page/tweet_detail_page.dart';
 import 'package:sns_app/page/tweet_page.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
 
 final routes = {
   '/': (context) => Container(), // 必ず必要
+  '/start': (context) => StartPage(),
   '/sign_up': (context) => SignUpPage(),
   '/login': (context) => LoginPage(),
   '/profile_setting': (context) => ProfileSettingPage(),

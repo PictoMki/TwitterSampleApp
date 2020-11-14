@@ -6,7 +6,6 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("新規登録"),
-        leading: Container(),
       ),
       body: Center(
         child: Padding(
@@ -65,7 +64,7 @@ class SignUpPage extends StatelessWidget {
   }
 
   void _tapLoginLink(BuildContext context) {
-    Navigator.pop(context);
+    Navigator.pushNamed(context, '/login');
   }
 
   void _tapRegisterButton(BuildContext context) {

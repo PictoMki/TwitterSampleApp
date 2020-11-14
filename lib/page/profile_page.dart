@@ -15,6 +15,9 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
   List<String> item = ["","","","","",""];
   ScrollController _scrollController = ScrollController();
   bool isAppBarTextHidden = true;
+  bool isMe = false;
+  bool isFollow = true;
+  bool isFollowed = true;
 
   @override
   void initState() {
@@ -78,21 +81,41 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                               Container(
                                 child: AvatarImage(size: 80,),
                               ),
-                              FlatButton(
-                                child: Text('変更',style: TextStyle(color: Colors.orange,),),
-                                color: Colors.white,
-                                shape: OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                                  borderSide: BorderSide(color: Colors.orange),
+                              Container(
+                                width: 120,
+                                child: FlatButton(
+                                  child: Text(isMe ? '変更' : isFollow ? 'フォロー中' :'フォローする',style: TextStyle(color: isFollow ? Colors.white : Colors.orange,),),
+                                  color: isFollow ? Colors.orange : Colors.white,
+                                  shape: OutlineInputBorder(
+                                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                                    borderSide: BorderSide(color: Colors.orange),
+                                  ),
+                                  onPressed: () {
+                                    if (isMe) {
+                                      Navigator.pushNamed(context, '/profile_setting');
+                                    } else {
+                                      setState(() {
+                                        isFollow = !isFollow;
+                                      });
+                                    }
+                                  },
                                 ),
-                                onPressed: () {
-                                  Navigator.pushNamed(context, '/profile_setting');
-                                },
                               ),
                             ],
                           ),
                           SizedBox(height: 5,),
                           Text('SNS太郎＠Twitter作成中',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,),
+                          SizedBox(height: 5,),
+                          isFollowed ? Container(
+                            decoration: BoxDecoration(
+                              color: Colors.black12,
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 2,horizontal: 8,),
+                              child: Text('フォローされています',style: TextStyle(fontSize: 12,color: AppColors.darkGray),),
+                            ),
+                          ) : Container(),
                           SizedBox(height: 15,),
                           Text('Twitter作成中だけど意外と難しい、レイアウト自体を作るのは簡単だけどFirebaseとかも使うとかなり大変'),
                           SizedBox(height: 10,),
@@ -206,6 +229,7 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                       ],
                     ),
                     ListView.builder(
+                      padding: EdgeInsets.only(top: 10),
                       itemCount: item.length,
                       physics: ScrollPhysics(),
                       shrinkWrap: true,

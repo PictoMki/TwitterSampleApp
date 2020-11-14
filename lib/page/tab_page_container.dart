@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sns_app/page/my_page.dart';
 import 'package:sns_app/page/search_page.dart';
+import 'package:sns_app/widget/drawer_avatar_image.dart';
 import 'package:sns_app/widget/tab_page_drawer.dart';
 import 'package:sns_app/page/time_line_page.dart';
-import 'package:sns_app/widget/avatar_image.dart';
 
 class TabPagesContainer extends StatefulWidget {
   final int initialIndex;
@@ -62,11 +62,21 @@ class _TabPagesContainerState extends State<TabPagesContainer>
       child: Scaffold(
         key: _key,
         appBar: AppBar(
-          title: Text('Twitter'),
+          title: Container(
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                image: AssetImage('assets/images/twitter_logo_black.png'),
+              ),
+            ),
+          ),
           leading: Padding(
             padding: EdgeInsets.all(5.0),
             child: InkWell(
-              child: AvatarImage(size: 10,),
+              child: DrawerAvatarImage(),
               onTap: () => _key.currentState.openDrawer(),
             ),
           ),

@@ -61,7 +61,7 @@ class TabPagesDrawer extends StatelessWidget {
               leading: Icon(Icons.exit_to_app),
               title: Text('ログアウト'),
               onTap: (){
-                Navigator.pushReplacementNamed(context, '/login');
+                Navigator.pushReplacementNamed(context, '/start');
               },
             ),
           ],

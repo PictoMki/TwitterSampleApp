@@ -16,7 +16,7 @@ class TopTabBar extends StatefulWidget implements PreferredSizeWidget {
   _TopTabBarState createState() => _TopTabBarState();
 
   @override
-  Size get preferredSize => Size.fromHeight(60.0);
+  Size get preferredSize => Size.fromHeight(40.0);
 }
 
 class _TopTabBarState extends State<TopTabBar>

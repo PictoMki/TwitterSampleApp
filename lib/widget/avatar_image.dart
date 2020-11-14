@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 
 class AvatarImage extends StatelessWidget {
   final double size;
+  final bool isNavigateProfile;
 
   AvatarImage({
     @required this.size,
+    this.isNavigateProfile = true,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        Navigator.pushNamed(context, '/profile');
+        if (isNavigateProfile) {
+          Navigator.pushNamed(context, '/profile');
+        }
       },
       child: Container(
         width: size,

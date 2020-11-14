@@ -9,9 +9,11 @@ class TweetListItem extends StatefulWidget {
 
 class _TweetListItemState extends State<TweetListItem> {
   bool isLike = false;
+  bool isReTweet = false;
 
   @override
   Widget build(BuildContext context) {
+    final BuildContext nowContext = context;
     return GestureDetector(
       onTap: (){
         Navigator.pushNamed(context, '/tweet_detail');
@@ -57,12 +59,40 @@ class _TweetListItemState extends State<TweetListItem> {
                             ),
                           ),
                           InkWell(
-                            onTap: (){},
+                            onTap: (){
+                              showModalBottomSheet(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    height: 75,
+                                    child: Column(
+                                      children: [
+                                        ListTile(
+                                          title: Text(isReTweet ? 'リツイートを取り消す' :'リツイートする'),
+                                          leading: isReTweet ? Icon(Icons.clear,color: Colors.red,) : Icon(Icons.repeat),
+                                          onTap: () {
+                                            Navigator.pop(context);
+                                            setState(() {
+                                              isReTweet = !isReTweet;
+                                            });
+                                            Scaffold.of(nowContext).showSnackBar(SnackBar(
+                                                content: Text(!isReTweet ? 'リツイートを取り消しました' : 'リツイートしました')));
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                },
+                              );
+                            },
                             child: Row(
                               children: [
-                                Icon(Icons.repeat,size: 20,color: AppColors.darkGray),
+                                isReTweet ? Icon(Icons.repeat,size: 20,color: Colors.greenAccent) : Icon(Icons.repeat,size: 20,color: AppColors.darkGray),
                                 SizedBox(width: 5,),
-                                Text('12',style: TextStyle(color: AppColors.darkGray),),
+                                Text(isReTweet ? '13' : '12',style: TextStyle(color: AppColors.darkGray),),
                               ],
                             ),
                           ),
