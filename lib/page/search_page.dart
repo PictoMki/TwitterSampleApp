@@ -9,12 +9,17 @@ class SearchPage extends StatelessWidget {
         children: [
           TextField(
             decoration: InputDecoration(
-              prefixIcon: Icon(Icons.search,size: 20,),
+              prefixIcon: Icon(
+                Icons.search,
+                size: 20,
+              ),
               hintText: 'ユーザーを検索',
             ),
             onChanged: (inputText) => {},
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           ListView.builder(
             itemCount: 10,
             physics: ScrollPhysics(),

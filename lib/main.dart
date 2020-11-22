@@ -34,10 +34,16 @@ final routes = {
   '/sign_up': (context) => SignUpPage(),
   '/login': (context) => LoginPage(),
   '/profile_setting': (context) => ProfileSettingPage(),
-  '/tab_page_container': (context) => TabPagesContainer(initialIndex: 0,),
+  '/tab_page_container': (context) => TabPagesContainer(
+        initialIndex: 0,
+      ),
   '/tweet_detail': (context) => TweetDetailPage(),
   '/tweet': (context) => TweetPage(),
   '/profile': (context) => ProfilePage(),
-  '/follow_list': (context) => UserListPage(userCategory: UserCategory.follow,),
-  '/follower_list': (context) => UserListPage(userCategory: UserCategory.follower,),
+  '/follow_list': (context) => UserListPage(
+        userCategory: UserCategory.follow,
+      ),
+  '/follower_list': (context) => UserListPage(
+        userCategory: UserCategory.follower,
+      ),
 };

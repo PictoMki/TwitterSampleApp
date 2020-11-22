@@ -38,4 +38,3 @@ String userCategoryToString(UserCategory userCategory) {
   }
   return null;
 }
-

@@ -6,7 +6,7 @@ class StartPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -21,16 +21,34 @@ class StartPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
-              Text('「いま」起きていることを見つけよう',style: TextStyle(fontSize: 36,fontWeight: FontWeight.bold),),
-              SizedBox(height: 50,),
-              Text('Twitterをはじめよう',style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold),),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                '「いま」起きていることを見つけよう',
+                style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                'Twitterをはじめよう',
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 10,
+              ),
               Container(
                 height: 45,
                 width: double.infinity,
                 child: FlatButton(
-                  child: Text('アカウントを作成',style: TextStyle(fontSize: 16,color: Colors.white,),),
+                  child: Text(
+                    'アカウントを作成',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
                   color: Colors.orange,
                   shape: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -41,12 +59,20 @@ class StartPage extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Container(
                 height: 45,
                 width: double.infinity,
                 child: FlatButton(
-                  child: Text('ログイン',style: TextStyle(fontSize: 16,color: Colors.orange,),),
+                  child: Text(
+                    'ログイン',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.orange,
+                    ),
+                  ),
                   color: Colors.white,
                   shape: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30)),

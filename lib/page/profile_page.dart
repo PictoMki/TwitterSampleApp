@@ -10,9 +10,10 @@ class ProfilePage extends StatefulWidget {
   _ProfilePageState createState() => _ProfilePageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStateMixin {
+class _ProfilePageState extends State<ProfilePage>
+    with SingleTickerProviderStateMixin {
   TabController _homeTabController;
-  List<String> item = ["","","","","",""];
+  List<String> item = ["", "", "", "", "", ""];
   ScrollController _scrollController = ScrollController();
   bool isAppBarTextHidden = true;
   bool isMe = false;
@@ -46,8 +47,23 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
           SliverAppBar(
             title: Column(
               children: [
-                Text('SNS太郎＠Twitter作成中',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: isAppBarTextHidden ? Colors.transparent : Colors.black),),
-                Text('ツイート 807',style: TextStyle(fontSize: 10,color: isAppBarTextHidden ? Colors.transparent : Colors.black),),
+                Text(
+                  'SNS太郎＠Twitter作成中',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: isAppBarTextHidden
+                          ? Colors.transparent
+                          : Colors.black),
+                ),
+                Text(
+                  'ツイート 807',
+                  style: TextStyle(
+                      fontSize: 10,
+                      color: isAppBarTextHidden
+                          ? Colors.transparent
+                          : Colors.black),
+                ),
               ],
             ),
             floating: true,
@@ -79,20 +95,37 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
-                                child: AvatarImage(size: 80,),
+                                child: AvatarImage(
+                                  size: 80,
+                                ),
                               ),
                               Container(
                                 width: 120,
                                 child: FlatButton(
-                                  child: Text(isMe ? '変更' : isFollow ? 'フォロー中' :'フォローする',style: TextStyle(color: isFollow ? Colors.white : Colors.orange,),),
-                                  color: isFollow ? Colors.orange : Colors.white,
+                                  child: Text(
+                                    isMe
+                                        ? '変更'
+                                        : isFollow
+                                            ? 'フォロー中'
+                                            : 'フォローする',
+                                    style: TextStyle(
+                                      color: isFollow
+                                          ? Colors.white
+                                          : Colors.orange,
+                                    ),
+                                  ),
+                                  color:
+                                      isFollow ? Colors.orange : Colors.white,
                                   shape: OutlineInputBorder(
-                                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                                    borderSide: BorderSide(color: Colors.orange),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(20)),
+                                    borderSide:
+                                        BorderSide(color: Colors.orange),
                                   ),
                                   onPressed: () {
                                     if (isMe) {
-                                      Navigator.pushNamed(context, '/profile_setting');
+                                      Navigator.pushNamed(
+                                          context, '/profile_setting');
                                     } else {
                                       setState(() {
                                         isFollow = !isFollow;
@@ -103,95 +136,179 @@ class _ProfilePageState extends State<ProfilePage> with SingleTickerProviderStat
                               ),
                             ],
                           ),
-                          SizedBox(height: 5,),
-                          Text('SNS太郎＠Twitter作成中',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,),
-                          SizedBox(height: 5,),
-                          isFollowed ? Container(
-                            decoration: BoxDecoration(
-                              color: Colors.black12,
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 2,horizontal: 8,),
-                              child: Text('フォローされています',style: TextStyle(fontSize: 12,color: AppColors.darkGray),),
-                            ),
-                          ) : Container(),
-                          SizedBox(height: 15,),
-                          Text('Twitter作成中だけど意外と難しい、レイアウト自体を作るのは簡単だけどFirebaseとかも使うとかなり大変'),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          Text(
+                            'SNS太郎＠Twitter作成中',
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
+                          isFollowed
+                              ? Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.black12,
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: 2,
+                                      horizontal: 8,
+                                    ),
+                                    child: Text(
+                                      'フォローされています',
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: AppColors.darkGray),
+                                    ),
+                                  ),
+                                )
+                              : Container(),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Text(
+                              'Twitter作成中だけど意外と難しい、レイアウト自体を作るのは簡単だけどFirebaseとかも使うとかなり大変'),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Row(
                             children: [
                               Row(
                                 children: [
-                                  Icon(Icons.location_on,size: 20,color: AppColors.darkGray),
-                                  SizedBox(width: 5,),
-                                  Text('東京',style: TextStyle(color: AppColors.darkGray),),
+                                  Icon(Icons.location_on,
+                                      size: 20, color: AppColors.darkGray),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    '東京',
+                                    style: TextStyle(color: AppColors.darkGray),
+                                  ),
                                 ],
                               ),
-                              SizedBox(width: 15,),
+                              SizedBox(
+                                width: 15,
+                              ),
                               Row(
                                 children: [
-                                  Icon(Icons.insert_link,size: 20,color: AppColors.darkGray),
-                                  SizedBox(width: 5,),
+                                  Icon(Icons.insert_link,
+                                      size: 20, color: AppColors.darkGray),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
                                   InkWell(
                                     onTap: () async {
-                                      final String url = 'https://www.google.com/?hl=ja';
+                                      final String url =
+                                          'https://www.google.com/?hl=ja';
                                       try {
                                         await canLaunch(url);
                                         await launch(url);
                                       } catch (error) {
                                         print(error);
-                                        Scaffold.of(context).showSnackBar(SnackBar(
-                                            content: Text('URLが有効ではありません。 $url')));
+                                        Scaffold.of(context).showSnackBar(
+                                            SnackBar(
+                                                content: Text(
+                                                    'URLが有効ではありません。 $url')));
                                       }
                                     },
-                                    child: Text('example/xxx/yyyy',style: TextStyle(color: Colors.blueAccent),),
+                                    child: Text(
+                                      'example/xxx/yyyy',
+                                      style:
+                                          TextStyle(color: Colors.blueAccent),
+                                    ),
                                   ),
                                 ],
                               ),
                             ],
                           ),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Row(
                             children: [
-                              Icon(Icons.cake,size: 20,color: AppColors.darkGray),
-                              SizedBox(width: 5,),
-                              Text('誕生日',style: TextStyle(color: AppColors.darkGray),),
-                              SizedBox(width: 15,),
-                              Text('1994年12月21日',style: TextStyle(color: AppColors.darkGray),),
+                              Icon(Icons.cake,
+                                  size: 20, color: AppColors.darkGray),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                '誕生日',
+                                style: TextStyle(color: AppColors.darkGray),
+                              ),
+                              SizedBox(
+                                width: 15,
+                              ),
+                              Text(
+                                '1994年12月21日',
+                                style: TextStyle(color: AppColors.darkGray),
+                              ),
                             ],
                           ),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Row(
                             children: [
-                              Icon(Icons.calendar_today,size: 20,color: AppColors.darkGray),
-                              SizedBox(width: 5,),
-                              Text('2010年2月からTwitterを利用しています。',style: TextStyle(color: AppColors.darkGray),),
+                              Icon(Icons.calendar_today,
+                                  size: 20, color: AppColors.darkGray),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                '2010年2月からTwitterを利用しています。',
+                                style: TextStyle(color: AppColors.darkGray),
+                              ),
                             ],
                           ),
-                          SizedBox(height: 10,),
+                          SizedBox(
+                            height: 10,
+                          ),
                           Row(
                             children: [
                               InkWell(
-                                onTap: (){
+                                onTap: () {
                                   Navigator.pushNamed(context, '/follow_list');
                                 },
                                 child: Row(
                                   children: [
-                                    Text('200',style: TextStyle(fontWeight: FontWeight.bold),),
-                                    Text('フォロー',style: TextStyle(color: AppColors.darkGray),),
+                                    Text(
+                                      '200',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      'フォロー',
+                                      style:
+                                          TextStyle(color: AppColors.darkGray),
+                                    ),
                                   ],
                                 ),
                               ),
-                              SizedBox(width: 10,),
+                              SizedBox(
+                                width: 10,
+                              ),
                               InkWell(
-                                onTap: (){
-                                  Navigator.pushNamed(context, '/follower_list');
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, '/follower_list');
                                 },
                                 child: Row(
                                   children: [
-                                    Text('300',style: TextStyle(fontWeight: FontWeight.bold),),
-                                    Text('フォロワー',style: TextStyle(color: AppColors.darkGray),),
+                                    Text(
+                                      '300',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      'フォロワー',
+                                      style:
+                                          TextStyle(color: AppColors.darkGray),
+                                    ),
                                   ],
                                 ),
                               ),

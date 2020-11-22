@@ -10,7 +10,10 @@ class LoginPage extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30,),
+          padding: EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 30,
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -19,28 +22,39 @@ class LoginPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text('メールアドレス'),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   TextFormField(
                     decoration: InputDecoration(
                       hintText: "Email",
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Text('パスワード'),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   TextFormField(
                     decoration: InputDecoration(
                       hintText: "Password",
                     ),
                     obscureText: true,
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       InkWell(
                         onTap: () => _tapRegisterLink(context),
-                        child: Text('新規登録',style: TextStyle(color: Colors.blue),),
+                        child: Text(
+                          '新規登録',
+                          style: TextStyle(color: Colors.blue),
+                        ),
                       ),
                       Text('はこちら')
                     ],
@@ -68,7 +82,5 @@ class LoginPage extends StatelessWidget {
     Navigator.pushNamed(context, '/sign_up');
   }
 
-  void _tapLoginButton() {
-
-  }
+  void _tapLoginButton() {}
 }

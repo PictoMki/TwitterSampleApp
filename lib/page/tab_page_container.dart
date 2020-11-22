@@ -22,8 +22,7 @@ class _TabPagesContainerState extends State<TabPagesContainer>
     with TickerProviderStateMixin {
   int currentIndex;
 
-  _TabPagesContainerState({int initialIndex})
-      : currentIndex = initialIndex;
+  _TabPagesContainerState({int initialIndex}) : currentIndex = initialIndex;
 
   final _pages = [
     TimeLinePage(),
@@ -35,18 +34,27 @@ class _TabPagesContainerState extends State<TabPagesContainer>
     return [
       BottomNavigationBarItem(
         icon: Icon(Icons.home),
-        activeIcon: Icon(Icons.home,color: Colors.orange,),
-        title: Text('タイムライン',),
+        activeIcon: Icon(
+          Icons.home,
+          color: Colors.orange,
+        ),
+        label: 'タイムライン',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.search),
-        activeIcon: Icon(Icons.search,color: Colors.orange,),
-        title: Text('検索',),
+        activeIcon: Icon(
+          Icons.search,
+          color: Colors.orange,
+        ),
+        label: '検索',
       ),
       BottomNavigationBarItem(
         icon: Icon(Icons.person_outline),
-        activeIcon: Icon(Icons.person_outline,color: Colors.orange,),
-        title: Text('マイページ',),
+        activeIcon: Icon(
+          Icons.person_outline,
+          color: Colors.orange,
+        ),
+        label: 'マイページ',
       ),
     ];
   }
@@ -60,41 +68,43 @@ class _TabPagesContainerState extends State<TabPagesContainer>
         return false;
       },
       child: Scaffold(
-        key: _key,
-        appBar: AppBar(
-          title: Container(
-            width: 30,
-            height: 30,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                fit: BoxFit.fill,
-                image: AssetImage('assets/images/twitter_logo_black.png'),
+          key: _key,
+          appBar: AppBar(
+            title: Container(
+              width: 30,
+              height: 30,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage('assets/images/twitter_logo_black.png'),
+                ),
+              ),
+            ),
+            leading: Padding(
+              padding: EdgeInsets.all(5.0),
+              child: InkWell(
+                child: DrawerAvatarImage(),
+                onTap: () => _key.currentState.openDrawer(),
               ),
             ),
           ),
-          leading: Padding(
-            padding: EdgeInsets.all(5.0),
-            child: InkWell(
-              child: DrawerAvatarImage(),
-              onTap: () => _key.currentState.openDrawer(),
-            ),
-          ),
-        ),
-        drawer: TabPagesDrawer(),
-        body: _pages[currentIndex],
-        floatingActionButton: currentIndex == 0 ? FloatingActionButton(
-          onPressed: (){
-            Navigator.pushNamed(context, '/tweet',arguments: 'いまなにしてる？');
-          },
-          child: Icon(Icons.comment),
-        ) : Container(),
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: currentIndex,
-          items: bottomItem(),
-          onTap: (tapIndex) => changeTabPage(tapIndex),
-        )
-      ),
+          drawer: TabPagesDrawer(),
+          body: _pages[currentIndex],
+          floatingActionButton: currentIndex == 0
+              ? FloatingActionButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/tweet',
+                        arguments: 'いまなにしてる？');
+                  },
+                  child: Icon(Icons.comment),
+                )
+              : Container(),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: currentIndex,
+            items: bottomItem(),
+            onTap: (tapIndex) => changeTabPage(tapIndex),
+          )),
     );
   }
 

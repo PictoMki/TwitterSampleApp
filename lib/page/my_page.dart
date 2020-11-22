@@ -12,7 +12,12 @@ class MyPage extends StatefulWidget {
 
 class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin {
   TabController _homeTabController;
-  List<String> item = ["","","","",];
+  List<String> item = [
+    "",
+    "",
+    "",
+    "",
+  ];
 
   @override
   void initState() {
@@ -53,7 +58,12 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin {
                       ),
                     ),
                     FlatButton(
-                      child: Text('変更',style: TextStyle(color: Colors.orange,),),
+                      child: Text(
+                        '変更',
+                        style: TextStyle(
+                          color: Colors.orange,
+                        ),
+                      ),
                       color: Colors.white,
                       shape: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -65,25 +75,47 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin {
                     ),
                   ],
                 ),
-                SizedBox(height: 5,),
-                Text('SNS太郎＠Twitter作成中',style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,),
-                SizedBox(height: 15,),
-                Text('Twitter作成中だけど意外と難しい、レイアウト自体を作るのは簡単だけどFirebaseとかも使うとかなり大変'),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'SNS太郎＠Twitter作成中',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  overflow: TextOverflow.ellipsis,
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                    'Twitter作成中だけど意外と難しい、レイアウト自体を作るのは簡単だけどFirebaseとかも使うとかなり大変'),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.location_on,size: 20,color: AppColors.darkGray),
-                        SizedBox(width: 5,),
-                        Text('東京',style: TextStyle(color: AppColors.darkGray),),
+                        Icon(Icons.location_on,
+                            size: 20, color: AppColors.darkGray),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          '東京',
+                          style: TextStyle(color: AppColors.darkGray),
+                        ),
                       ],
                     ),
-                    SizedBox(width: 15,),
+                    SizedBox(
+                      width: 15,
+                    ),
                     Row(
                       children: [
-                        Icon(Icons.insert_link,size: 20,color: AppColors.darkGray),
-                        SizedBox(width: 5,),
+                        Icon(Icons.insert_link,
+                            size: 20, color: AppColors.darkGray),
+                        SizedBox(
+                          width: 5,
+                        ),
                         InkWell(
                           onTap: () async {
                             final String url = 'https://www.google.com/?hl=ja';
@@ -96,53 +128,92 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin {
                                   content: Text('URLが有効ではありません。 $url')));
                             }
                           },
-                          child: Text('example/xxx/yyyy',style: TextStyle(color: Colors.blueAccent),),
+                          child: Text(
+                            'example/xxx/yyyy',
+                            style: TextStyle(color: Colors.blueAccent),
+                          ),
                         ),
                       ],
                     ),
                   ],
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
-                    Icon(Icons.cake,size: 20,color: AppColors.darkGray),
-                    SizedBox(width: 5,),
-                    Text('誕生日',style: TextStyle(color: AppColors.darkGray),),
-                    SizedBox(width: 15,),
-                    Text('1994年12月21日',style: TextStyle(color: AppColors.darkGray),),
+                    Icon(Icons.cake, size: 20, color: AppColors.darkGray),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      '誕生日',
+                      style: TextStyle(color: AppColors.darkGray),
+                    ),
+                    SizedBox(
+                      width: 15,
+                    ),
+                    Text(
+                      '1994年12月21日',
+                      style: TextStyle(color: AppColors.darkGray),
+                    ),
                   ],
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
-                    Icon(Icons.calendar_today,size: 20,color: AppColors.darkGray),
-                    SizedBox(width: 5,),
-                    Text('2010年2月からTwitterを利用しています。',style: TextStyle(color: AppColors.darkGray),),
+                    Icon(Icons.calendar_today,
+                        size: 20, color: AppColors.darkGray),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      '2010年2月からTwitterを利用しています。',
+                      style: TextStyle(color: AppColors.darkGray),
+                    ),
                   ],
                 ),
-                SizedBox(height: 10,),
+                SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pushNamed(context, '/follow_list');
                       },
                       child: Row(
                         children: [
-                          Text('200',style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text('フォロー',style: TextStyle(color: AppColors.darkGray),),
+                          Text(
+                            '200',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'フォロー',
+                            style: TextStyle(color: AppColors.darkGray),
+                          ),
                         ],
                       ),
                     ),
-                    SizedBox(width: 10,),
+                    SizedBox(
+                      width: 10,
+                    ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         Navigator.pushNamed(context, '/follower_list');
                       },
                       child: Row(
                         children: [
-                          Text('300',style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text('フォロワー',style: TextStyle(color: AppColors.darkGray),),
+                          Text(
+                            '300',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'フォロワー',
+                            style: TextStyle(color: AppColors.darkGray),
+                          ),
                         ],
                       ),
                     ),

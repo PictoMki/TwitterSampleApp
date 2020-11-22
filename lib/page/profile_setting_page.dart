@@ -10,7 +10,10 @@ class ProfileSettingPage extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30,),
+          padding: EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 30,
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -21,12 +24,18 @@ class ProfileSettingPage extends StatelessWidget {
                   Center(
                     child: GestureDetector(
                       onTap: () => _tapImageButton(),
-                      child: AvatarImage(size: 150,),
+                      child: AvatarImage(
+                        size: 150,
+                      ),
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(
+                    height: 10,
+                  ),
                   Text('ユーザー名'),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   TextFormField(
                     decoration: InputDecoration(
                       hintText: "SNS太郎",
@@ -51,9 +60,7 @@ class ProfileSettingPage extends StatelessWidget {
     );
   }
 
-  void _tapImageButton() {
-
-  }
+  void _tapImageButton() {}
 
   void _tapRegisterButton(BuildContext context) {
     Navigator.pushNamed(context, '/tab_page_container');

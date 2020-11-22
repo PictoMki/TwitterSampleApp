@@ -3,9 +3,5 @@ class User {
   String name;
   String imageUrl;
 
-  User({
-    this.id,
-    this.name,
-    this.imageUrl
-  });
+  User({this.id, this.name, this.imageUrl});
 }
