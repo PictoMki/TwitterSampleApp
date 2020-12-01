@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "169826391347",
+    "firebase_url": "https://flutter-twitter-df731.firebaseio.com",
+    "project_id": "flutter-twitter-df731",
+    "storage_bucket": "flutter-twitter-df731.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169826391347:android:f49a7ce13e6bcda7b8da46",
+        "android_client_info": {
+          "package_name": "ttokyo.sns_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169826391347-33s0k94un64rsdt79431d4undn2ucbph.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ttokyo.sns_app",
+            "certificate_hash": "1e7537e9b4cd27fceb942c22f85227ffaddc0654"
+          }
+        },
+        {
+          "client_id": "169826391347-lg09gh338dfa5ett1ts368erm9lv68di.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrB7HvDEuLlahRAdL2EMIGYqiQlq3djt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169826391347-lg09gh338dfa5ett1ts368erm9lv68di.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "169826391347-6rl6g3om7dkibs9mm8jnbk14nae54kqn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "t-tokyo.snsApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
