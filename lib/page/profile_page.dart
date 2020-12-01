@@ -187,7 +187,9 @@ class _ProfilePageState extends State<ProfilePage>
                                   ),
                                   Text(
                                     '東京',
-                                    style: TextStyle(color: AppColors.darkGray),
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: AppColors.darkGray),
                                   ),
                                 ],
                               ),
@@ -218,8 +220,9 @@ class _ProfilePageState extends State<ProfilePage>
                                     },
                                     child: Text(
                                       'example/xxx/yyyy',
-                                      style:
-                                          TextStyle(color: Colors.blueAccent),
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.blueAccent),
                                     ),
                                   ),
                                 ],
@@ -238,14 +241,16 @@ class _ProfilePageState extends State<ProfilePage>
                               ),
                               Text(
                                 '誕生日',
-                                style: TextStyle(color: AppColors.darkGray),
+                                style: TextStyle(
+                                    fontSize: 12, color: AppColors.darkGray),
                               ),
                               SizedBox(
                                 width: 15,
                               ),
                               Text(
                                 '1994年12月21日',
-                                style: TextStyle(color: AppColors.darkGray),
+                                style: TextStyle(
+                                    fontSize: 12, color: AppColors.darkGray),
                               ),
                             ],
                           ),
@@ -261,7 +266,8 @@ class _ProfilePageState extends State<ProfilePage>
                               ),
                               Text(
                                 '2010年2月からTwitterを利用しています。',
-                                style: TextStyle(color: AppColors.darkGray),
+                                style: TextStyle(
+                                    fontSize: 12, color: AppColors.darkGray),
                               ),
                             ],
                           ),

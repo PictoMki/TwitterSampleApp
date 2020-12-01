@@ -33,8 +33,8 @@ class _UserListItemState extends State<UserListItem> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    Wrap(
+                      crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
                         Text(
                           'SNS太郎＠Twitter作成中',
@@ -42,18 +42,22 @@ class _UserListItemState extends State<UserListItem> {
                           overflow: TextOverflow.ellipsis,
                         ),
                         Container(
-                          width: 120,
+                          margin: EdgeInsets.only(left: 10),
+                          width: 100,
+                          height: 30,
                           child: FlatButton(
                             child: isFollow
                                 ? Text(
                                     'フォロー中',
                                     style: TextStyle(
+                                      fontSize: 11,
                                       color: Colors.white,
                                     ),
                                   )
                                 : Text(
                                     'フォローする',
                                     style: TextStyle(
+                                      fontSize: 11,
                                       color: Colors.orange,
                                     ),
                                   ),

@@ -10,7 +10,6 @@ import 'package:sns_app/page/tweet_detail_page.dart';
 import 'package:sns_app/page/tweet_page.dart';
 import 'package:sns_app/page/user_list_page.dart';
 
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();

@@ -102,7 +102,8 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin {
                         ),
                         Text(
                           '東京',
-                          style: TextStyle(color: AppColors.darkGray),
+                          style: TextStyle(
+                              fontSize: 12, color: AppColors.darkGray),
                         ),
                       ],
                     ),
@@ -130,7 +131,8 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin {
                           },
                           child: Text(
                             'example/xxx/yyyy',
-                            style: TextStyle(color: Colors.blueAccent),
+                            style: TextStyle(
+                                fontSize: 12, color: Colors.blueAccent),
                           ),
                         ),
                       ],
@@ -148,14 +150,14 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin {
                     ),
                     Text(
                       '誕生日',
-                      style: TextStyle(color: AppColors.darkGray),
+                      style: TextStyle(fontSize: 12, color: AppColors.darkGray),
                     ),
                     SizedBox(
                       width: 15,
                     ),
                     Text(
                       '1994年12月21日',
-                      style: TextStyle(color: AppColors.darkGray),
+                      style: TextStyle(fontSize: 12, color: AppColors.darkGray),
                     ),
                   ],
                 ),
@@ -171,7 +173,7 @@ class _MyPageState extends State<MyPage> with SingleTickerProviderStateMixin {
                     ),
                     Text(
                       '2010年2月からTwitterを利用しています。',
-                      style: TextStyle(color: AppColors.darkGray),
+                      style: TextStyle(fontSize: 12, color: AppColors.darkGray),
                     ),
                   ],
                 ),
